@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐍 Snake Vision</title>
+    <link rel="stylesheet" href="game.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🐍 Snake Vision</h1>
+        
+        <div class="game-layout">
+            <div class="game-area">
+                <div style="position: relative;">
+                    <canvas id="gameCanvas" width="500" height="500"></canvas>
+                    <div class="game-over" id="gameOver">
+                        <h2>GAME OVER</h2>
+                        <p>Puntuación: <span id="finalScore">0</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-panel">
+                <div class="status" id="status">Inicializando...</div>
+                
+                <div class="video-container">
+                    <video id="video" autoplay playsinline></video>
+                </div>
+
+                <div class="score-display">
+                    <h3>Puntuación</h3>
+                    <div class="score" id="score">0</div>
+                </div>
+
+                <div class="direction-display">
+                    <h3>Dirección</h3>
+                    <div class="direction" id="direction">---</div>
+                </div>
+
+                <div class="predictions">
+                    <h3>Predicciones</h3>
+                    <div class="pred-item">
+                        <span>⬆️ Arriba</span>
+                        <span id="predUp">0%</span>
+                    </div>
+                    <div class="pred-bar"><div class="pred-fill" id="barUp"></div></div>
+                    
+                    <div class="pred-item">
+                        <span>⬇️ Abajo</span>
+                        <span id="predDown">0%</span>
+                    </div>
+                    <div class="pred-bar"><div class="pred-fill" id="barDown"></div></div>
+                    
+                    <div class="pred-item">
+                        <span>⬅️ Izquierda</span>
+                        <span id="predLeft">0%</span>
+                    </div>
+                    <div class="pred-bar"><div class="pred-fill" id="barLeft"></div></div>
+                    
+                    <div class="pred-item">
+                        <span>➡️ Derecha</span>
+                        <span id="predRight">0%</span>
+                    </div>
+                    <div class="pred-bar"><div class="pred-fill" id="barRight"></div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button class="btn btn-start" id="startBtn">▶️ Iniciar Juego</button>
+            <button class="btn btn-restart" id="restartBtn">🔄 Reiniciar</button>
+        </div>
+    </div>
+
+    <!-- TensorFlow.js y Teachable Machine -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+    
+    <!-- Script del juego -->
+    <script src="game.js"></script>
+</body>
+</html>
